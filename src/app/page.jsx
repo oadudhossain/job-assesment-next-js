@@ -102,7 +102,7 @@ export default function Home() {
               onChange={handleInputChange}
               placeholder="Search Company"
               id="CompanyName"
-              className="text-purple-600 input input-bordered input-primary w-full max-w-xs"
+              className="text-violet-500 input input-bordered input-primary w-full max-w-xs"
               value={search || ""}
               type="text"
               name="CompanyName"
@@ -111,7 +111,7 @@ export default function Home() {
           <div className="flex gap-10 pt-3">
             <div>
               <label htmlFor="CompanyStatus">
-                1
+                <b className="text-violet-500">Status 1</b>
                 <input
                   className="radio radio-primary"
                   onChange={handleCompanyStatusChange}
@@ -131,7 +131,7 @@ export default function Home() {
                   name="CompanyStatus"
                   value={0}
                 />
-                0
+                <b className="text-violet-500">Status 0</b>
               </label>
             </div>
           </div>
@@ -141,11 +141,11 @@ export default function Home() {
           <table class="table table-zebra">
             <thead>
               <tr>
-                <th>Company Name</th>
-                <th>Company Phone</th>
-                <th>Company Address</th>
-                <th>Company Logo</th>
-                <th>Company Status</th>
+                <th className="text-violet-500">Company Name</th>
+                <th className="text-violet-500">Company Phone</th>
+                <th className="text-violet-500">Company Address</th>
+                <th className="text-violet-500">Company Logo</th>
+                <th className="text-violet-500">Company Status</th>
               </tr>
             </thead>
             <tbody>
@@ -178,13 +178,16 @@ export default function Home() {
               ))}
 
             {companys.length >= 5 && count < lastPage && (
-              <button className="btn btn-error" onClick={handleNextClick}>
+              <button className="btn btn-error w-40" onClick={handleNextClick}>
                 Next
               </button>
             )}
 
             {count > 1 && count < lastPage && (
-              <button className="btn btn-success" onClick={handlePreviousClick}>
+              <button
+                className="btn btn-success w-40 "
+                onClick={handlePreviousClick}
+              >
                 Previous
               </button>
             )}
