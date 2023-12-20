@@ -170,7 +170,7 @@ export default function Home() {
             {(companys.length >= 5 && count > 1) ||
               (companys.length < 5 && count > 2 && (
                 <button
-                  className="btn btn-success"
+                  className="btn btn-primary w-40"
                   onClick={handlePreviousClick}
                 >
                   Previous
@@ -178,14 +178,17 @@ export default function Home() {
               ))}
 
             {companys.length >= 5 && count < lastPage && (
-              <button className="btn btn-error w-40" onClick={handleNextClick}>
+              <button
+                className="btn btn-primary w-40"
+                onClick={handleNextClick}
+              >
                 Next
               </button>
             )}
 
             {count > 1 && count < lastPage && (
               <button
-                className="btn btn-success w-40 "
+                className="btn btn-primary w-40 "
                 onClick={handlePreviousClick}
               >
                 Previous
